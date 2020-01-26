@@ -1,0 +1,124 @@
+\subsection{ベクトルの積}
+
+次に2つのベクトルの間にtextbf{内積}(inner product)を定義しよう．
+数の組であるベクトルの場合には，内積$\cdot$は
+\[
+	(v_1,	\cdots	,	v_n)	\cdot	(w_1,	\cdots	,	w_n)
+	=
+	v_1	w_1	+	\cdots	+	v_n	w_n
+\]
+で定義される．2つのベクトルの間の内積は実数である．
+矢印ベクトルの言葉では，内積は次のように表わされる．
+$\bs{v},\bs{w}$を原点を始点とする矢印で表わす．この2つの矢印がなす角を
+$\theta$とし，各々のベクトルの\textbf{大きさ}$||\bs{v}||,||\bs{w}||$で表わす．
+ここで$\bs{v}$が$(v_1,\cdots	v_n)$で表わされるとき，
+\[
+	||\bs{v}||	=	\sqrt{v_1^2	+	\cdots	+	v_n^2}
+\]
+である（$||\bs{v}	||$は$\bs{v}$を表わす矢印の長さである）．このとき
+\[
+	\bs{v}\cdot	\bs{w}	=	||\bs{v}	||	||	\bs{w}	||	\cos	\theta.
+\]
+\問{1}
+内積の2つの定義が同値であることを確かめよ．
+
+次に\textbf{外積}(outer product)を定義しよう．内積はどんな次元でも意味があったが，
+ベクトルの外積は3次元のベクトルの間にしか意味がない．定義は，数の組の言葉では
+\[
+	(v_1,	v_2	,	v_3)	\times	(w_1	,	w_2,	w_3)
+	=
+	(v_2w_3	-	v_3	w_2,	v_3w_1	-	v_1w_3,	v_1w_2	-	v_2	w_1)
+\]
+である．外積を矢印ベクトルの言葉で述べると次のようになる．$\bs{v},\bs{w}$の
+外積とは，$\bs{v},\bs{w}$を2辺とする平行4辺形の面積を大きさとし，
+$\bs{v},\bs{w}$の両者と直行するベクトルである(図\ref{fig1x4}).
+\begin{figure}[hbtp]	
+		\centering
+		\includegraphics[bb=0 0 800 600,clip,width=8cm,height=4cm]{fig1x4.bmp}
+		\caption{右手系}
+		\label{fig1x4}
+\end{figure}
+このようなベクトルはちょうど2つあるが，そのうち$\bs{v}$に右手の親指を，
+$\bs{w}$に人差し指を向けたとき，中指の方向である方をとる．
+この最後の事実を$\bs{v},\bs{w},\bs{v}	\times	\bs{w}$は\textbf{右手系をなす}
+という．
+
+\例題{1.1}
+外積の数の組を用いた定義と矢印の用いた定義が一致することを示せ．
+
+\解
+$(u_2uv_3	-	u_3v_2,	u_3v_1	-	u_1v_3	,	u_1v_2-u_2v_1)$が
+$\bs{u}=(u_1,	u_2	,	u_3)$および$\bs{v}=(v_1v_2,v_3)$と直交することは，
+\[
+	u_1(u_2v_3	-	u_3v_2)	+u_2(u_3v_1-u_1v_3)+u_3(u_1v_2-u_2v_1)=0
+\]
+などから分かる．一方
+\begin{align*}
+	&	||(u_2v_3-u_3v_2,u_3v_1-u_1v_3,u_1v_2-u_2v_1)||^2	+	|\bs{u}\cdot	\bs{v}|^2	\\
+	&=	(u_2v_3-u_3v_2)^2	+	(u_3v_1-u_1v_3)^2+(u_1v_2-u_2v_1)^2+(u_1v_1+u_2v_2+u_3v_3)^2	\\
+	&=	(u_1^2+u_2^2+u_3^2)(v_1^2+v_2^2+v_3^2)
+	=	||\bs{u}||^2	||\bs{v}||^2
+\end{align*}
+である．$||	\bs{u}||$と$||\bs{v}||$のなす角を$\theta$とすると，
+$\bs{u}\cdot	\bs{v}	=	\cos	\theta	||\bs{u}||||\bs{v}||$であったから，
+\begin{align*}
+	||(u_2v_3-u_3v_2,	u_3v_1-u_1v_3,u_1v_2-u_2v_1)||^2
+	&=	||\bs{u}||^2	||\bs{v}	||^2	-	||\bs{u}||^2	||\bs{v}||^2	\cos^2	\theta	\\
+	&	=	||\bs{u}||^2	||\bs{v}||^2	\sin^2	\theta.
+\end{align*}
+よって，ベクトル$(u_2v_3-u_3v_2,	u_3v_1-u_1v_3,	u_1v_2-u_2v_1)$の大きさは
+$\bs{u}$,$\bs{v}$を2辺とする平行4辺形の面積に等しい．後は$\pm$を決めればよい．これは
+読者に任せる．
+\■
+
+内積と外積は次の性質を持つ．
+\begin{list}{}{}
+	\item	(ⅰ) $\bs{v}\cdot	\bs{w}	=	\bs{w}\cdot	\bs{v}$.
+	\item	(ⅱ) $(C_1\bs{v}_1	+	C_2\bs{v}_2	)	\cdot	\bs{w}	=	C_1\bs{v_1}	\cdot	\bs{w}	+	C_2\bs{v}_2	\cdot	\bs{w}$.
+	\item	(ⅲ) $\bs{v}	\times	\bs{w}=	-	\bs{w}	\times	\bs{v},	\quad	\bs{v}	\times	\bs{v}	=	\bs{0}$.
+	\item	(ⅳ) $(C_1	\bs{v}_1	+	C_2\bs{v}_2)	\times	\bs{w}	=	C_1	\bs{v}_1	\times	\bs{w}	+	C_2	\bs{v}_2	\times	\bs{w}$.
+\end{list}
+また，内積と外積の間には次の関係式が成り立つ．
+\begin{equation}
+	\bs{u}\cdot	(\bs{v}	\times	\bs{w})	=	\bs{v}	\cdot	(\bs{w}	\times	\bs{u})	=	\bs{w}	\cdot	(\bs{u}\times	\bs{v}).
+	\label{eq1x1}
+\end{equation}
+式(\ref{eq1x1})の両辺は$\bs{u},\bs{v},\bs{w}$が右手系をなすとき，$\bs{u},\bs{v},\bs{w}$が定める平行6面体の
+体積である．$\bs{u},\bs{v},\bs{w}$が右手系をなさないときは，(\ref{eq1x1})は平行6面体の
+体積$\times	(-1)$である．
+
+このことを証明しよう．$\bs{v}$と$\bs{w}$を2辺とする平行4辺形を$P$とする．$P$と$\bs{u}$のなす角を
+$\theta$，$P$の面積を$A$とすると，$\bs{u},\bs{v},\bs{w}$が定める平行6面体の体積は
+$|| A	||	\bs{u}	\sin	\theta$である．ところで$P$の面積$A$は$||\bs{v}	\times	\bs{w}||$であった．
+また$P$は$\bs{v}\times	\bs{w}$と直交する．したがって$\bs{u}$と$\bs{v}\times\bs{w}$のなす角$\rho$は
+$\displaystyle	\rho	=	\left|\frac{\pi}{2}-\theta	\right|$である．よって
+\begin{align*}
+	\text{平行6面体の体積}	&	=	A	||\bs{u}||	\sin	\theta
+														= ||\bs{v}\times	\bs{w}||||\bs{u}||	\left|\cos	\left(\frac{\pi}{2}-\rho	\right)\right|	\\
+													&	=	||	\bs{u}\cdot	(\bs{v}\times	\bs{w})||.
+\end{align*}
+また，$\bs{u}=(u_1,u_2,u_3)$などと書いたとき
+\begin{align*}
+	\bs{u}\cdot	(	\bs{v}	\times	\bs{w})	
+		&=	u_1	(v_2w_3-v_3w_2)+u_2(v_3w_1-v_1w_3)+u_3(v_1w_2-v_2w_1)	\\
+		&=	\det	\begin{pmatrix}
+								u_1	&	v_1	&	w_1	\\
+								u_2	&	v_2	&	w_2	\\
+								u_3	&	v_3	&	w_3	
+							\end{pmatrix}
+\end{align*}
+\begin{figure}[hbtp]
+		\centering	
+		\includegraphics[bb=0 0 800 600,clip,width=5cm,height=3.6cm]{fig1x5.bmp}	
+		\caption{$\bs{u},\bs{v},\bs{w}$が定める平行６面体}
+		\label{fig1x5}
+\end{figure}
+外積は積といっても結合法則$\bs{u}\times	(\bs{v}\times\bs{w})	=	(	\bs{u}\times	\bs{v}	)	\times	\bs{w}$
+を\text{みたさない}.
+
+\問{2}
+$\bs{u}=(1,1,2)$,$\bs{v}=(2,0,1)$,$\bs{w}=(1,0,3)$について，
+$\bs{u}\cdot	(\bs{v}	\times	\bs{w})$，$\bs{v}\cdot	(\bs{w}	\times	\bs{u})$，
+$\bs{w}	\cdot	(\bs{u}	\times	\bs{v})$，$\bs{u}\times	(\bs{v}	\times	\bs{w})$，$(\bs{u}	\times	\bs{v})	\times	\bs{w}$
+を計算せよ．
+

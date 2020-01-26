@@ -1,0 +1,71 @@
+\subsection{勾配ベクトル場}
+
+次に勾配ベクトル場(gradient vector field)について述よう．
+起伏のある面を考え，2変数関数$f(x,y)$が点$(x,y)$での高さを表しているとする．
+この面の上に物体を置き，それがどのように動くかを考えてみよう．
+物体には重力がかかっているから，できるだけ速く低い方へ，つまり$f$の値が小さい方へ
+動こうとするであろう．そこで，ある点$(x,y)$で物体が動く方向を見るには，
+どの方向に$f$が最も早く減るかを見ればよい．
+これには微分を用いる．
+
+ベクトル$(a,b)$を考え，点が$(x,y)$から$(a,b)$の方向に動いたとき$f$の値は
+どのような割合で変化するかを考えよう．それには$t$を$f(x+ta,y+tb)$に
+対応させる関数の$t$についての微分を$t=0$で考えればよい．（これを$(a,b)$方向の
+関数$f$の\textbf{方向微分}(direction differential)という）．
+
+\補題{1.2}
+単位ベクトル（長さ$1$のベクトル)$(a,b)$を色々かえたとき，
+$\displaystyle	\frac{df(x+ta,y+tb)}{dt}$が最小になるのは，$(a,b)$が
+\[
+	-\left(\frac{\partial	f}{\partial	x}	,		\frac{\partial	f}{\partial	y}	\right)
+\]
+と同じ方向であるときで，その場合の値は
+\[
+	-\sqrt{\left(\frac{\partial	f}{\partial	x}	\right)^2	+	\left(\frac{\partial	f}{\partial	y}	\right)^2}
+\]
+である．
+
+\証明
+$\displaystyle	-\left(\frac{\partial	f}{\partial	x}	,		\frac{\partial	f}{\partial	y}	\right)
+	=	r	(\cos	\theta	,	\sin	\theta)$，$(a,b)=(\cos	\varphi	,	\sin	\varphi)$と書いてみると，
+\begin{align*}
+	\frac{df(x+ta,	y	+tb)}{dt}	
+		&=	a	\frac{\partial	f}{\partial	x}	+	b	\frac{\partial	f}{\partial	y}	\\
+		&=	-r	(	\cos	\theta	\cos	\varphi	+	\sin	\theta	\sin	\varphi)	
+		=	-r	\cos	(\theta	-	\varphi).
+\end{align*}
+よって，これは$\theta	=	\varphi$のとき，つまり$(a,b)$が$\displaystyle	-	\left(\frac{\partial	f}{\partial	x},	\frac{\partial	f}{\partial	y}	\right)$
+と同じ方向であるとき最小で，その値は
+\[
+	-r	=	-	\sqrt{	\left(	\frac{\partial	f}{\partial	x}	\right)^2	
+								+	\left(	\frac{\partial	f}{\partial	y}	\right)^2}.
+\]
+\■
+\定義{1.3}
+$n$変数関数$f$に対して，その\textbf{勾配ベクトル場}を
+\[
+	\grad	f(x_1,	\cdots	,	x_n)
+	=
+	\left(	\frac{\partial	f}{\partial	x_1}	(x_1,	\cdots	,	x_n),	
+					\cdots\
+					\frac{\partial	f}{\partial	x_n}	(x_1,	\cdots	,	x_n),
+	\right)
+\]
+で定義する．
+
+補題1.2（とそのn変数版)により，$f$が点$p$で最も速く増える方向は$\grad	f(p)$で，
+その増え方は$\grad	f(p)$の大きさ
+\[
+	||	\grad	f(p)	||	=	\sqrt{	\left(\frac{\partial	f}{\partial	x_1}(p)	\right)^2	
+																	+	\cdots	+
+																\left(\frac{\partial	f}{\partial	x_n}(p)\right)^2
+															}
+\]
+に比例する．
+2変数関数$f$が点$(x,y)$での高さを表しているときには，$-\grad	f(x,y)$の方向は，
+点$(x,y)$に置いた物体が動き出す方向を表している．また，
+$||	\grad	f(x,y)||$は，この物体に力の大きさを表している．勾配ベクトル場の記号で，
+$\grad	f(p)$の代わりに$\grad_p	f$を用いることがある．
+
+\問{4}
+$\grad	(fg)	=	f(\grad	g)	+	g	(\grad	f)$を示せ．
